@@ -19,7 +19,7 @@
   * 2.1. Đánh giá Nội dung Đào tạo Hiện tại (Chương trình cũ) & 03 Điểm nghẽn Cốt tử
   * 2.2. Phân tích Nguyên nhân & Cơ sở Khoa học để Tinh gọn và Hiện đại hóa
   * 2.3. Đề xuất Điều chỉnh Toàn diện: Công bố Khung Chương trình Đào tạo Mới K26 (Học kỳ I đến Học kỳ V)
-  * 2.4. Chi tiết Cấu trúc Học phần Khung Mới K26: Tính Kế thừa, Năng lực AI & Sản phẩm Đầu ra
+  * 2.4. Chi tiết Cấu trúc Học phần Khung Mới K26: Sơ đồ Kế thừa, Năng lực AI & Sản phẩm Đầu ra
   * 2.5. Khai thác Hạ tầng LMS AI Khả thi Hỗ trợ Học tập & Lộ trình Thích ứng Dần 03 Giai đoạn
 * **PHẦN 3: CÁC NỘI DUNG TRỌNG TÂM THẢO LUẬN VỚI HỘI ĐỒNG PTIT**
 * **PHẦN 4: HỆ THỐNG CĂN CỨ PHÁP LÝ & TÀI LIỆU THAM KHẢO**
@@ -61,44 +61,45 @@ Giáo dục đại học Việt Nam, đặc biệt trong khối ngành Công ngh
 
 ## 1.2. Dự báo Nhu cầu Ngành nghề CNTT & Xu thế Kỹ sư AI-Native Toàn cầu
 
-Dựa trên dữ liệu phân tích từ Diễn đàn Kinh tế Thế giới (WEF - *Future of Jobs Report*), Gartner, Bộ Kinh tế, Thương mại và Công nghiệp Nhật Bản (METI), Báo cáo Thị trường IT Việt Nam TopDev và Chiến lược Quốc gia về Bán dẫn & AI của Thủ tướng Chính phủ, 04 nhóm vị trí nghề nghiệp sau đây đang dẫn dắt thị trường tuyển dụng:
+```mermaid
+flowchart LR
+    Market["NHU CẦU THỊ TRƯỜNG IT 2026 - 2030"] --> RAG["1. AI Application Dev\n(RAG & Vector DB Focus)\nTăng trưởng >35%/năm"]
+    Market --> AGENT["2. AI Automation Engineer\n(Autonomous Agents & MCP)\nNhu cầu DN tăng 45%"]
+    Market --> OPS["3. LLMOps & Cloud Architect\n(Redis Cache, Guardrails, AWS)\nTop 3 lương IT cao nhất"]
+    Market --> BRSE["4. Kỹ sư Cầu nối Quốc tế (BrSE)\n(Nhật Bản & Thị trường Global)\nThiếu hụt 790.000 KS (METI)"]
 
+    style Market fill:#1e3a8a,stroke:#1e3a8a,color:#ffffff,stroke-width:2px
+    style RAG fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a,stroke-width:1.5px
+    style AGENT fill:#f0fdfa,stroke:#0d9488,color:#0f766e,stroke-width:1.5px
+    style OPS fill:#fef3c7,stroke:#d97706,color:#b45309,stroke-width:1.5px
+    style BRSE fill:#fff7ed,stroke:#ea580c,color:#c2410c,stroke-width:1.5px
 ```
-+-------------------------------------------------------------------------------------------------------------------+
-|                        XU THẾ NHU CẦU NGHỀ NGHIỆP CNTT ĐÓN ĐẦU GIAI ĐOẠN 2026 – 2030                              |
-+------------------------------------+------------------------------------+-----------------------------------------+
-| 1. Kỹ sư Ứng dụng AI & RAG         | 2. Kỹ sư Tự động hóa Agentic AI    | 3. Kỹ sư Vận hành LLMOps & Cloud        |
-|    (AI Application Developer)      |    (AI Automation & Agentic Dev)   |    (LLMOps & Cloud Architect)           |
-|    • Xây dựng hệ thống RAG nội bộ. |    • Lập trình tác nhân tự hành    |    • Quản trị chi phí API (Cost Gov).   |
-|    • Quản trị Vector DB (pgvector).|      kết nối Tool qua chuẩn MCP.   |    • Caching Redis, Guardrails bảo mật. |
-|    • WEF: Nhóm việc tăng >30%/năm. |    • Điều phối Multi-Agent LangGrap|    • Top 3 vị trí lương cao nhất TopDev.|
-+------------------------------------+------------------------------------+-----------------------------------------+
-| 4. Kỹ sư Cầu nối Quốc tế (BrSE)                                                                                  |
-|    • Kết nối nghiệp vụ phần mềm và ngoại ngữ làm việc trực tiếp với khách hàng Nhật Bản và Toàn cầu.             |
-|    • METI: Nhật Bản dự báo thiếu hụt từ 400.000 đến 790.000 kỹ sư CNTT đến năm 2030; Việt Nam chiếm >50% thị phần.|
-+-------------------------------------------------------------------------------------------------------------------+
-```
+
+### Bảng Thống kê Dự báo Nhu cầu & Xu thế Tuyển dụng CNTT:
+
+| STT | Vị trí Nghề nghiệp (Job Role) | Trọng tâm Công nghệ Kỷ nguyên Mới | Tốc độ Tăng trưởng & Mức lương | Nguồn Dữ liệu & Dẫn chứng |
+| :---: | :--- | :--- | :--- | :--- |
+| **01** | **Kỹ sư Ứng dụng AI & RAG**<br>*(AI Application Developer)* | LLMs API, pgvector, LangChain, Embeddings, RAG Engine chống ảo giác | Tăng trưởng **>30%/năm**; Lương khởi điểm cao hơn 25% | **WEF Future of Jobs Report 2024** |
+| **02** | **Kỹ sư Tự động hóa Agentic AI**<br>*(AI Automation & Agentic Dev)* | Single Agent, ReAct, Model Context Protocol (MCP), LangGraph Multi-Agent | Nhóm việc mới tăng trưởng **đột biến 45%** tại các tập đoàn lớn | **Gartner Tech Trends 2024–2028** |
+| **03** | **Kỹ sư Vận hành LLMOps & Cloud**<br>*(LLMOps & Cloud Architect)* | Semantic Caching (Redis), Model Routing, NeMo Guardrails, AWS Cloud | **Top 3** vị trí có đãi ngộ cao nhất thị trường IT | **TopDev Vietnam IT Report 2024** |
+| **04** | **Kỹ sư Cầu nối Quốc tế (BrSE)**<br>*(Bridge Software Engineer)* | Kiến trúc phần mềm, Quản trị Agile, Tiếng Nhật N3/N2, Kỹ năng làm việc Global | Nhật Bản thiếu hụt **790.000 kỹ sư** đến 2030; VN chiếm >50% ITO | **Bộ Kinh tế & Công nghiệp Nhật (METI)** |
 
 ---
 
 ## 1.3. Đánh giá Ảnh hưởng Trực tiếp đến Hệ PTIT của Rikkei Education
 
-Việc nhận diện chính xác các tác động của xu hướng giáo dục đại học đến chương trình hợp tác RE - PTIT là tiền đề để xây dựng giải pháp thích ứng:
+```mermaid
+flowchart TD
+    subgraph Impact["03 CHIỀU TÁC ĐỘNG ĐẾN HỆ HỢP TÁC PTIT x RE"]
+        I1["1. TUYỂN SINH & CẠNH TRANH\n• Siết xét tuyển sớm học bạ theo QĐ 3040\n• Thí sinh chọn lọc chương trình thực chất\n• Khung K26 AI-Native là lợi thế hút tuyển sinh"]
+        I2["2. TẢI HỌC TẬP KÉP CỦA SINH VIÊN\n• Học đồng thời PTIT (15-20 tín chỉ) + RE\n• Khung cũ 18.7h/tuần gây quá tải >40h/tuần\n• Bắt buộc tinh gọn giờ lên lớp, tự học qua AI"]
+        I3["3. CHUẨN ĐẦU RA DOANH NGHIỆP\n• Rikkeisoft đòi hỏi kỹ sư làm chủ AI IDE\n• Doanh nghiệp yêu cầu Zero-day Onboarding\n• Đảm bảo 100% sinh viên có việc làm cao"]
+    end
 
-### 1. Tác động đến Công tác Tuyển sinh & Cạnh tranh Thu hút Người học
-* **Gia tăng áp lực cạnh tranh nguồn tuyển**: Khi Bộ GD&ĐT siết chặt xét tuyển sớm và chuẩn hóa điểm ưu tiên, thí sinh sẽ cân nhắc kỹ lưỡng giữa việc chọn hệ đại học chính quy truyền thống và hệ đào tạo liên kết/song bằng.
-* **Đòi hỏi minh chứng chất lượng vượt trội**: Phụ huynh và thí sinh đòi hỏi chương trình RE-PTIT phải có sự khác biệt rõ rệt về công nghệ đào tạo (chương trình AI-Native hiện đại, nền tảng LMS AI tiên tiến) và cam kết đầu ra (chuẩn dự án thực tế Rikkeisoft, cơ hội việc làm tại Nhật Bản/toàn cầu). Nếu không đổi mới khung đào tạo, chương trình sẽ giảm sức hút trong kỳ tuyển sinh 2027.
-
-### 2. Tác động đến Tải học tập & Nguy cơ Kiệt sức (Burnout) của Sinh viên
-* **Đặc thù kép của sinh viên hệ RE - PTIT**: Sinh viên phải hoàn thành đồng thời hai khối lượng:
-  * Khối lượng kiến thức đại học tại PTIT: 15 – 20 tín chỉ/học kỳ.
-  * Khối lượng đào tạo tại RE: Chương trình cũ yêu cầu 16 – 20 giờ lên lớp/tuần.
-* **Ảnh hưởng tiêu cực hiện hữu**: Tổng thời gian học tập vượt quá 40 giờ/tuần. Sinh viên chịu áp lực quá tải nghiêm trọng, dẫn đến tình trạng suy giảm kết quả học tập ở cả hai phía, tỷ lệ nợ môn tăng và có nguy cơ cao sinh viên bỏ học giữa chừng tại RE để ưu tiên hoàn thành bằng tốt nghiệp PTIT.
-* **Yêu cầu bắt buộc**: Phải tinh giản giờ học lý thuyết tại lớp, tích hợp công nghệ AI để hỗ trợ tự học, chuyển trọng tâm lên lớp sang thực hành bài bản và làm dự án thực tế.
-
-### 3. Tác động đến Vị thế Doanh nghiệp & Chuẩn Đầu ra Tuyển dụng
-* **Yêu cầu mới từ thị trường tuyển dụng**: Doanh nghiệp công nghệ (đặc biệt là hệ sinh thái dự án của Rikkeisoft tại Việt Nam và Nhật Bản) hiện nay không còn tìm kiếm lập trình viên chỉ biết gõ code thủ công theo cú pháp đơn thuần. 
-* **Cơ hội bứt phá cho RE**: Việc nâng cấp khung chương trình đón đầu kỷ nguyên AI giúp sinh viên RE-PTIT vượt trội hoàn toàn so với sinh viên các trường khác về tốc độ phát triển phần mềm, khả năng tích hợp AI vào giải quyết bài toán nghiệp vụ, từ đó đảm bảo 100% sinh viên có việc làm chất lượng cao ngay khi tốt nghiệp.
+    style I1 fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a
+    style I2 fill:#fff7ed,stroke:#ea580c,color:#c2410c
+    style I3 fill:#f0fdf4,stroke:#16a34a,color:#15803d
+```
 
 ---
 
@@ -108,25 +109,50 @@ Việc nhận diện chính xác các tác động của xu hướng giáo dục
 
 ## 2.1. Đánh giá Nội dung Đào tạo Hiện tại (Chương trình cũ) & 03 Điểm nghẽn Cốt tử
 
-Khảo sát chương trình đào tạo cũ (khung 2026 truyền thống gồm 5 học kỳ, 20.3 tháng, tổng 1.656 giờ) cho thấy những bất cập nghiêm trọng:
+Khảo sát chương trình đào tạo cũ (khung 2026 truyền thống gồm 5 học kỳ, 20.3 tháng, tổng 1.656 giờ) cho thấy những bất cập nghiêm trọng được tổng hợp trong bảng và sơ đồ phân tích dưới đây:
+
+### Bảng Phân tích 03 Điểm nghẽn Cốt tử của Chương trình Đào tạo Cũ:
+
+| STT | Điểm nghẽn Cốt tử | Thực trạng Chương trình Cũ (Khung 2026) | Hệ lụy Thực tế Đối với Người học & Nhà trường | Định hướng Đột phá Khung K26 |
+| :---: | :--- | :--- | :--- | :--- |
+| **01** | **Lạc hậu về Công nghệ & Thiếu vắng AI** | • 100% nội dung xoay quanh lập trình Web Java truyền thống (C, Java OOP, Spring Boot cơ bản).<br>• Hoàn toàn không có nội dung về AI Prompting, Python/FastAPI, CSDL Vector, RAG, Tác nhân tự hành (Agents), MCP và LLMOps. | • Sinh viên tốt nghiệp thiếu hụt kỹ năng công nghệ cốt lõi của năm 2026.<br>• Mất lợi thế cạnh tranh khi tuyển dụng vào các dự án công nghệ mới của Rikkeisoft và đối tác quốc tế. | **Tái cấu trúc 100% AI-Native**: Đưa AI xuyên suốt từ Kỳ I (Prompting, Figma AI) đến Kỳ V (RAG, Multi-Agent MCP, LLMOps). |
+| **02** | **Phương pháp Lập trình Thủ công, Năng suất Thấp** | • Đào tạo theo tư duy gõ code thủ công 100% từ đầu (Boilerplate code).<br>• Chưa tiếp cận phương pháp Pair-Programming với AI IDE (Cursor, Windsurf).<br>• Không được học kỹ năng quản lý ngữ cảnh (@Files, @Web, Context Caching) và kiểm định code AI. | • Tốc độ hoàn thành dự án chậm hơn từ 2 đến 3 lần so với kỹ sư sử dụng AI IDE.<br>• Sinh viên lúng túng khi đối mặt với lỗi mã nguồn do AI sinh ra (ảo giác cú pháp). | **Đào tạo Pair-Programming chuẩn mực**: Sinh viên thành thạo sử dụng AI IDE sinh code UI/API, tập trung tư duy vào kiểm thử, bảo mật và tối ưu logic. |
+| **03** | **Thời lượng Quá tải & Thiếu Tính Kế thừa Dự án** | • Thời lượng học tại lớp **18.7 giờ/tuần**.<br>• Tỷ lệ lý thuyết tại lớp chiếm tới 40%–45%, giảng viên đọc slide lý thuyết lặp lại.<br>• Các bài tập lab nhỏ lẻ, thiếu tính liên kết kế thừa thành một sản phẩm hoàn chỉnh theo chuẩn Agile/Scrum. | • Tổng tải học tập (RE + PTIT) vượt **40 giờ/tuần** $\rightarrow$ Sinh viên kiệt sức (*burnout*), nợ môn, tỷ lệ bỏ dở RE tăng cao.<br>• Sinh viên ra trường không có Portfolio dự án sản phẩm quy mô doanh nghiệp. | **Tinh gọn giờ học & Học tập theo dự án (Product-Based Learning)**:<br>• Giảm giờ lý thuyết tại lớp, đưa lên LMS AI.<br>• Sản phẩm môn trước là đầu vào trực tiếp cho môn sau. |
+
+---
+
+### Sơ đồ Vòng xoáy Bất cập của Mô hình Đào tạo Cũ:
+
+```mermaid
+flowchart TD
+    NodeA["CHƯƠNG TRÌNH CŨ: THUẦN LẬP TRÌNH WEB TRUYỀN THỐNG\n(100% Code tay, 18.7 giờ lên lớp/tuần, 45% Lý thuyết thụ động)"] --> NodeB["QUÁ TẢI HỌC TẬP KÉP\n(18.7h RE + 20h PTIT = >40h/tuần)"]
+    NodeB --> NodeC["HỆ LỤY NGƯỜI HỌC\n• Sinh viên kiệt sức (Burnout)\n• Tỷ lệ nợ môn & trễ tiến độ cao\n• Nguy cơ sinh viên bỏ dở RE để giữ bằng PTIT"]
+    NodeC --> NodeD["HẪNG HỤT CHUẨN ĐẦU RA DOANH NGHIỆP\n• Thiếu kỹ năng AI IDE (Cursor) & Prompting\n• Không biết làm RAG, Multi-Agent & Cloud\n• Doanh nghiệp phải mất 6-9 tháng đào tạo lại"]
+
+    style NodeA fill:#fef2f2,stroke:#ef4444,color:#991b1b,stroke-width:1.5px
+    style NodeB fill:#fff7ed,stroke:#f97316,color:#c2410c,stroke-width:1.5px
+    style NodeC fill:#fef3c7,stroke:#f59e0b,color:#b45309,stroke-width:1.5px
+    style NodeD fill:#f8fafc,stroke:#64748b,color:#0f172a,stroke-width:1.5px
+```
+
+---
+
+### Biểu đồ Thống kê So sánh Phân bổ Tải Học tập:
 
 ```
-+-------------------------------------------------------------------------------------------------------------------+
-|                           03 ĐIỂM NGHẼN CỐT TỬ CỦA NỘI DUNG ĐÀO TẠO HIỆN TẠI (CHƯƠNG TRÌNH CŨ)                     |
-+--------------------------+----------------------------------------------------------------------------------------+
-| 1. Lạc hậu về Công nghệ  | • Toàn bộ 5 học kỳ chỉ xoay quanh lập trình Web Java truyền thống (C, Java OOP, Spring)|
-|    & Thiếu vắng AI       | • Hoàn toàn không có nội dung về AI Prompting, Python/FastAPI, Vector DB, RAG,         |
-|                          |   Tác nhân tự hành (AI Agents), Giao thức MCP và Vận hành mô hình lớn (LLMOps).       |
-+--------------------------+----------------------------------------------------------------------------------------+
-| 2. Phương pháp Lập trình | • Sinh viên được đào tạo theo tư duy code thủ công 100% từ đầu.                        |
-|    Thủ công, Năng suất   | • Hoàn toàn chưa được tiếp cận phương pháp Pair-Programming với AI IDE (Cursor/Windsurf|
-|    Thấp                  | • Không biết cách quản lý ngữ cảnh (@Files, @Web, Context Caching) và kiểm định code AI|
-+--------------------------+----------------------------------------------------------------------------------------+
-| 3. Thời lượng Quá tải &  | • 18.7 giờ/tuần học trực tiếp tại lớp là quá nặng nề khi kết hợp lịch học đại học PTIT.|
-|    Thiếu Tính Kế thừa    | • Tỷ lệ giờ giảng lý thuyết tại lớp chiếm tới 40%–45%, gây nhàm chán và quá tải.       |
-|    Dự án Thực tế         | • Các bài tập rời rạc, thiếu dự án xuyên suốt mô phỏng quy trình Agile/Scrum thực tế.   |
-+--------------------------+----------------------------------------------------------------------------------------+
+SO SÁNH TỔNG TẢI HỌC TẬP HÀNG TUẦN CỦA SINH VIÊN (GIỜ/TUẦN):
+
+Chương trình Cũ:  [===== PTIT: 20h =====][===== RE: 18.7h (45% LT) =====] => 38.7h - 42h/tuần  [NGUY CƠ QUÁ TẢI ĐỎ]
+Khung K26 Đề xuất: [===== PTIT: 20h =====][== RE Thực hành: 12h ==][LMS AI: 6h] => ~32h/tuần  [VÙNG CÂN BẰNG TỐI ƯU]
 ```
+
+| Chỉ số Định lượng So sánh | Chương trình Đào tạo Cũ | Khung Mới K26 (Đề xuất) | Chênh lệch & Hiệu quả Cải tiến |
+| :--- | :---: | :---: | :--- |
+| **Thời lượng học trực tiếp tại lớp** | **18.7 giờ/tuần** | **12.0 – 14.0 giờ/tuần** | **Giảm 30%** áp lực trực tiếp tại giảng đường |
+| **Tỷ lệ giờ Lý thuyết trực tiếp** | **40% – 45%** (Đọc slide) | **10% – 15%** (Đúc kết cốt lõi) | **Chuyển 80% lý thuyết** sang học chủ động qua LMS AI |
+| **Tỷ lệ Thực hành & Đồ án thực chiến** | **55%** | **85% – 90%** | **Tập trung 100%** giờ trên lớp cho thực chiến & dự án |
+| **Hỗ trợ giải đáp lỗi lập trình** | Chờ đến giờ lên lớp (Thủ công) | **AI Assistant 24/7 tức thì** | Sinh viên được sửa lỗi ngay, không bị nghẽn tự học |
+| **Mức độ ứng dụng công nghệ AI** | **0%** (Hoàn toàn thủ công) | **Xuyên suốt 100% 5 học kỳ** | Chuẩn hóa năng lực Kỹ sư AI-Native thế hệ mới |
 
 ---
 
@@ -142,157 +168,142 @@ Khảo sát chương trình đào tạo cũ (khung 2026 truyền thống gồm 5
 
 Bộ môn CNTT chính thức ban hành **Khung chương trình đào tạo mới K26 (Hệ PTIT - KS26)**, được tái cấu trúc toàn diện từ Học kỳ I đến Học kỳ V chuẩn AI-Native:
 
+### Bảng Tổng thể Khung Chương trình Đào tạo K26 (SEM I đến SEM V):
+
+| Học kỳ | Định hướng Năng lực | Danh mục Module Môn học Chuẩn K26 | Hình thức Khảo thí | Chuẩn đầu ra Nghề nghiệp (Job Role) |
+| :---: | :--- | :--- | :---: | :--- |
+| **SEM I** | **Kiến thức Nền tảng & Kỹ năng AI** | • **IT-101**: Fundamental of IT (Nhập môn CNTT)<br>• **IT-102**: AI Prompting Foundation (Kỹ năng AI)<br>• **IT-103**: UI/UX Design (Figma & AI Design)<br>• **IT-104**: Web Interface Development (Tailwind CSS)<br>• **IT-105**: GIT Version Control (Conventional Commits)<br>• **IT-106**: Web App Development (Javascript ES6+) | Thi thực hành & Project | **Fresher Frontend / UI Developer**<br>Sinh viên làm chủ môi trường máy tính, tư duy tự học qua AI, tự tay lập trình giao diện Web chuẩn W3C, làm việc nhóm bằng Git. |
+| **SEM II** | **Kiến thức Nền tảng & Web Fullstack** | • **IT-201**: Business Analysis & System Design (SRS)<br>• **IT-202**: Database (PostgreSQL & BaaS Supabase)<br>• **IT-203**: Python Programming (Tư duy OOP)<br>• **IT-204**: Back-end Development (FastAPI RESTful)<br>• **IT-205**: AI-assisted Programming (Cursor/Windsurf)<br>• **IT-206**: Software Development Life Cycle (Agile)<br>• **RK-101**: Thực tập RK-Lab Internship 1 | Thi thực hành & Project | **Junior Fullstack Developer / AI Coder**<br>Nắm vững tư duy BA phân tích dự án, làm chủ hệ quản trị CSDL quan hệ, lập trình FastAPI kết hợp AI IDE hoàn thiện Web Fullstack. |
+| **SEM III** | **Kiến thức Chuyên ngành: AI & RAG** | • **IT-301**: Applied Mathematics for AI (Numpy/Pandas)<br>• **IT-302**: Data structures & Algorithms 1 (Search/Sort)<br>• **IT-303**: Applied Machine Learning (Hugging Face)<br>• **IT-304**: RAG Systems & LLMs Development (pgvector)<br>• **RK-102**: Thực tập RK-Lab Internship 2 | Thi thực hành & Project | **AI Application Developer (RAG Focus)**<br>Làm sạch dữ liệu lớn, tính toán khoảng cách ngữ nghĩa, sử dụng LLM mã nguồn mở, cài đặt Vector DB và xây dựng Trợ lý AI hỏi đáp nội bộ. |
+| **SEM IV** | **Kiến thức Chuyên ngành: Agentic AI & DevOps** | • **IT-401**: Data structures & Algorithms 2 (Cây & Đồ thị)<br>• **IT-402**: Autonomous Agents & MCP Protocol<br>• **IT-403**: Multi-Agent Architecture & Systems (LangGraph)<br>• **IT-404**: DevOps Architecture & Containerization (Docker)<br>• **RK-103**: Thực tập RK-Lab Internship 3 | Thi thực hành & Project | **AI Automation Engineer / Agentic Developer**<br>Lập trình luồng AI tự suy luận và gọi công cụ (MCP), điều phối kiến trúc đa tác nhân (LangGraph) và làm chủ DevOps Docker. |
+| **SEM V** | **Kiến thức Chuyên ngành: LLMOps & Production Cloud** | • **IT-501**: LLMs Operation & Cost Governance (Redis)<br>• **IT-502**: AI Security & Cloud Deployment (AWS Cloud)<br>• **RK-104**: Thực tập Tốt nghiệp RK-Lab Internship 4 | Project & Đồ án tốt nghiệp | **LLMOps Engineer / AI Product Dev / Architect**<br>Đưa hệ thống AI lên hạ tầng Cloud AWS, tối ưu chi phí API (Semantic Cache), thiết lập hàng rào bảo mật (Guardrails) chuẩn Production. |
+
+---
+
+## 2.4. Chi tiết Cấu trúc Học phần Khung Mới K26: Sơ đồ Kế thừa, Năng lực AI & Sản phẩm Đầu ra
+
+### Sơ đồ Chuỗi Mắt xích Kế thừa Sản phẩm Toàn khóa (Product-Based Learning):
+
+```mermaid
+flowchart LR
+    subgraph SEM1["SEM I: FRONTEND & AI FOUNDATION"]
+        M102["IT-102\nPrompting"] --> M103["IT-103\nFigma UI/UX"]
+        M103 --> M104["IT-104\nHTML/CSS/Tailwind"]
+        M104 --> M105["IT-105\nGit CLI & Flow"]
+        M105 --> M106["IT-106\nJS Web App"]
+    end
+
+    subgraph SEM2["SEM II: FULLSTACK & BA"]
+        M106 --> M201["IT-201\nBA Spec (SRS)"]
+        M201 --> M202["IT-202\nDatabase Schema"]
+        M202 --> M204["IT-204\nFastAPI Server"]
+        M204 --> RK1["RK-101\nWeb Fullstack"]
+    end
+
+    subgraph SEM3["SEM III: AI & RAG"]
+        M202 --> M304["IT-304\npgvector DB"]
+        M303["IT-303\nHugging Face"] --> M304
+        M304 --> RK2["RK-102\nRAG Engine Q&A"]
+    end
+
+    subgraph SEM4["SEM IV: AGENTIC & DEVOPS"]
+        RK2 --> M402["IT-402\nSingle Agent MCP"]
+        M402 --> M403["IT-403\nLangGraph Multi-Agent"]
+        M403 --> M404["IT-404\nDockerize All"]
+        M404 --> RK3["RK-103\nAutomation System"]
+    end
+
+    subgraph SEM5["SEM V: LLMOPS & CLOUD"]
+        RK3 --> M501["IT-501\nRedis Caching"]
+        M501 --> M502["IT-502\nGuardrails AWS"]
+        M502 --> RK4["RK-104\nProduction Product"]
+    end
+
+    style SEM1 fill:#eff6ff,stroke:#3b82f6
+    style SEM2 fill:#f0fdfa,stroke:#0d9488
+    style SEM3 fill:#fef3c7,stroke:#d97706
+    style SEM4 fill:#fdf4ff,stroke:#a855f7
+    style SEM5 fill:#ecfdf5,stroke:#10b981
 ```
-+-------------------------------------------------------------------------------------------------------------------+
-|                                KHUNG CHƯƠNG TRÌNH ĐÀO TẠO CNTT MỚI (HỆ PTIT - KS26)                               |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-| Học kỳ  | Định hướng Chuẩn   | Danh mục Module Môn học Trọng tâm        | Chuẩn đầu ra Nghề nghiệp (Job Role)     |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-| **SEM I** | **Kiến thức Nền tảng** | • IT-101: Fundamental of IT (Nhập môn)   | **Fresher Frontend / UI Developer**     |
-|         | & Kỹ năng AI       | • IT-102: AI Prompting Foundation        | Sinh viên làm chủ môi trường máy tính,  |
-|         |                    | • IT-103: UI/UX Design (Figma & AI)      | tư duy tự học qua AI, tự tay code Web   |
-|         |                    | • IT-104: Web Interface (HTML/CSS/Tailw.)| giao diện chuẩn W3C, quản lý Git nhóm.  |
-|         |                    | • IT-105: GIT Version Control (Cursor)   |                                         |
-|         |                    | • IT-106: Web App Development (JS ES6)   |                                         |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-| **SEM II**| **Kiến thức Nền tảng** | • IT-201: Business Analysis & System Des.| **Junior Fullstack Developer / AI Coder**|
-|         | & Web Fullstack    | • IT-202: Database (PostgreSQL & Supabase| Nắm vững tư duy BA phân tích dự án,     |
-|         |                    | • IT-203: Python Programming (OOP)       | làm chủ CSDL, lập trình Python/FastAPI  |
-|         |                    | • IT-204: Back-end Development (FastAPI) | kết hợp AI IDE hoàn thiện web Fullstack.|
-|         |                    | • IT-205: AI-assisted Programming(Cursor)|                                         |
-|         |                    | • IT-206: Software Dev Life Cycle (Agile)|                                         |
-|         |                    | • RK-101: Thực tập RK-Lab Internship 1   |                                         |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-| **SEM III*| **Kiến thức Chuyên  ** | • IT-301: Applied Mathematics for AI     | **AI Application Developer (RAG Focus)**|
-|         | **ngành: AI & RAG**| • IT-302: Data structures & Algorithms 1 | Làm sạch dữ liệu, tính toán ma trận ngữ |
-|         |                    | • IT-303: Applied Machine Learning (HF)  | nghĩa, cài đặt Vector DB (pgvector) và  |
-|         |                    | • IT-304: RAG Systems & LLMs Development | phát triển Trợ lý AI hỏi đáp nội bộ.    |
-|         |                    | • RK-102: Thực tập RK-Lab Internship 2   |                                         |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-| **SEM IV**| **Kiến thức Chuyên  ** | • IT-401: Data structures & Algorithms 2 | **AI Automation Engineer / Agentic Dev**|
-|         | **ngành: Agentic** | • IT-402: Autonomous Agents & MCP Protocol| Phát triển tác nhân tự hành (Agent),    |
-|         |                    | • IT-403: Multi-Agent Architecture (LangG)| kết nối công cụ qua giao thức MCP, điều |
-|         |                    | • IT-404: DevOps Arch & Containerization | phối Multi-Agent và đóng gói Docker.    |
-|         |                    | • RK-103: Thực tập RK-Lab Internship 3   |                                         |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-| **SEM V** | **Kiến thức Chuyên  ** | • IT-501: LLMs Operation & Cost Governan.| **LLMOps Engineer / AI Product Dev /    |
-|         | **ngành: LLMOps**  | • IT-502: AI Security & Cloud Deployment | **Software Architect**                  |
-|         |                    | • RK-104: Đồ án Tốt nghiệp RK-Lab        | Tối ưu chi phí API (Redis Cache), bảo mật|
-|         |                    |                                          | mô hình (Guardrails) & đưa hệ thống lên |
-|         |                    |                                          | AWS Cloud chuẩn Production-Ready.       |
-+---------+--------------------+------------------------------------------+-----------------------------------------+
-```
 
 ---
 
-## 2.4. Chi tiết Cấu trúc Học phần Khung Mới K26: Tính Kế thừa, Năng lực AI & Sản phẩm Đầu ra
+### Bảng Chi tiết Phân bổ Thời lượng & Học phần Học kỳ I (SEM I):
 
-### A. Chi tiết Học kỳ I (SEM I) - Kiến thức Nền tảng & Kỹ năng AI:
-* **Chuẩn đầu ra Học kỳ (PLO 1 – PLO 5)**:
-  * *PLO 1*: Sử dụng thành thạo máy tính, hệ điều hành và các lệnh Git cốt lõi để quản lý tài nguyên và phiên bản mã nguồn.
-  * *PLO 2*: Vận dụng kỹ thuật Prompt Engineering với LLMs để tra cứu kiến thức, tóm tắt thông tin và tối ưu hóa tốc độ tự học.
-  * *PLO 3*: Thiết kế và lập trình giao diện Web Responsive bằng HTML/CSS và Tailwind CSS chuẩn mực.
-  * *PLO 4*: Lập trình tính năng tương tác Web bằng Javascript thuần, sử dụng AI để sinh logic, kiểm thử và sửa lỗi (Debugging).
-  * *PLO 5*: Rèn luyện phương pháp quản lý thời gian và học tập chủ động thích ứng kỷ nguyên AI.
-* **Chi tiết từng Môn học trong Học kỳ I**:
-  1. **IT-101 (Nhập môn CNTT - 23 buổi / 46h)**: Kiến trúc HĐH, Terminal Commands, Markdown, Tin học văn phòng nâng cao (VLOOKUP, biểu đồ, thiết kế slide kỹ thuật), Cloud Workspace (Lark, Slack), Bảo mật số cá nhân (2FA, Secrets .env), Troubleshooting chuẩn Developer.
-  2. **IT-102 (AI Prompting Foundation - 10 buổi / 20h)**: Bản chất LLMs, Token, Context Window, Hiện tượng ảo giác (Hallucination) và đối soát chéo, Cấu trúc Prompt chuẩn CREATE, Zero/Few-shot, Chain-of-Thought (CoT), Kỹ thuật tự học Feynman AI, Prompt Library và cảnh báo Prompt Injection.
-  3. **IT-103 (UI/UX Design - 10 buổi / 20h)**: Nguyên lý Heuristic, User Flow, Wireframe, Lý thuyết màu sắc & Typography kết hợp AI (Khroma, Fontjoy), Làm chủ Figma, Auto Layout, Prototyping tương tác, Component System. Kế thừa Prompt từ IT-102 để tạo bản vẽ UI/UX hoàn chỉnh.
-  4. **IT-104 (Phát triển Giao diện Web - 23 buổi / 46h)**: HTML5 Semantic, CSS3 Core, Flexbox, CSS Grid, Responsive Multi-device, Tailwind CSS Utility-first, Kỹ thuật viết Prompt tối ưu hóa mã nguồn (CSS Refactoring) và kiểm định chuẩn W3C Validator. Tái hiện 100% bản vẽ Figma từ IT-103.
-  5. **IT-105 (Quản lý Phiên bản GIT - 10 buổi / 20h)**: Kiến trúc 3 cây Git, Chu trình lưu vết (add, commit, push), Chiến lược phân nhánh (Branching & Merging), Xử lý Merge Conflict, Pull Request & Code Review chuẩn doanh nghiệp, Conventional Commits kết hợp AI IDE Cursor.
-  6. **IT-106 (Phát triển Ứng dụng Web JS - 31 buổi / 62h)**: Javascript Core, Cấu trúc rẽ nhánh & Vòng lặp, Mảng & Đối tượng, DOM Manipulation, Event Listeners, Browser Storage, Cơ chế Bất đồng bộ (Promise, Async/Await), Fetch API RESTful. Kế thừa giao diện IT-104 để hoàn thiện Website tương tác full logic frontend.
+| Mã môn | Tên Môn học | Đầu ra Môn học (CLO) | Nội dung Chính & Ứng dụng AI | Lý thuyết | Thực hành (Off / On) | Mini Proj | Thi / Dự án | Tổng tiết (2h/tiết) | Tổng giờ |
+| :---: | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **IT-101** | **Fundamental of IT**<br>*(Nhập môn CNTT)* | CLO1: Tối ưu môi trường máy tính cá nhân<br>CLO2: Thành thạo Terminal cơ bản<br>CLO3: Tin học văn phòng nâng cao<br>CLO4: Cộng tác Cloud Workspace | Kiến trúc HĐH, Terminal Commands, Markdown kỹ thuật, Lark/Slack, Bảo mật cá nhân (2FA, Secrets), Troubleshooting chuẩn Dev | 9 tiết | 5 Off / 4 On | 2 tiết | Thi TH (2t) | **23 tiết** | **46 giờ** |
+| **IT-102** | **AI Prompting Foundation**<br>*(Kỹ năng Prompting AI)* | CLO1: Giao tiếp chuẩn với AI<br>CLO2: Khai thác AI tóm tắt & tự học<br>CLO3: Nhận thức ảo giác AI & kiểm chứng | Khái niệm Token, Context Window, CREATE Framework, Zero/Few-shot, Chain-of-Thought, Feynman Prompting, Prompt Library | 5 tiết | 2 Off / 1 On | 1 tiết | Thi TH (1t) | **10 tiết** | **20 giờ** |
+| **IT-103** | **UI/UX Design**<br>*(Thiết kế Giao diện Web)* | CLO1: Tư duy UX luồng người dùng<br>CLO2: Thao tác thành thạo Figma<br>CLO3: Thiết kế Prototype đa màn hình | Heuristic Heuristics, User Flow, Wireframe, Figma Auto Layout, Component System, AI Color (Khroma), Typography (Fontjoy) | 4 tiết | 2 Off / 2 On | 1 tiết | Thi TH (1t) | **10 tiết** | **20 giờ** |
+| **IT-104** | **Web Interface Development**<br>*(Phát triển Giao diện Web)* | CLO1: Lập trình Responsive HTML5/CSS3<br>CLO2: Thành thạo Tailwind CSS<br>CLO3: Prompting tối ưu mã nguồn W3C | HTML5 Semantic, CSS3 Core, Flexbox, CSS Grid, Tailwind CSS classes, AI CSS Refactoring, Kiểm định W3C Validator | 10 tiết | 5 Off / 4 On | 2 tiết | Thi TH (2t) | **23 tiết** | **46 giờ** |
+| **IT-105** | **GIT Version Control**<br>*(Quản lý Phiên bản GIT)* | CLO1: Thao tác thành thạo Git CLI<br>CLO2: Xử lý tình huống phối hợp nhóm | Git 3 cây, GitHub Repository, Git Flow, Branching, Merge Conflict, Pull Request, Conventional Commits với Cursor | 4 tiết | 2 Off / 2 On | 1 tiết | Thi TH (1t) | **10 tiết** | **20 giờ** |
+| **IT-106** | **Web App Development**<br>*(Phát triển Ứng dụng Web)* | CLO1: Lập trình tương tác JS thuần<br>CLO2: Xử lý dữ liệu JSON & RESTful<br>CLO3: Sử dụng AI sinh logic & debug | JS Variables, ES6+, DOM Manipulation, Event Listeners, Browser Storage, Promises/Async-Await, Fetch API Mock Server | 10 tiết | 5 Off / 5 On | 2 tiết | Project (6t) | **31 tiết** | **62 giờ** |
+| **TỔNG KỲ I**| **Kiến thức Nền tảng** | **Fresher Frontend / UI Developer** | **6 Module chuẩn W3C & Nền tảng Kỹ năng AI** | **42 tiết** | **37 tiết** | **9 tiết** | **13 tiết** | **107 tiết** | **214 giờ** |
 
 ---
 
-### B. Chi tiết Học kỳ II (SEM II) - Kiến thức Nền tảng & Web Fullstack:
-* **Chuẩn đầu ra (PLO 1 – PLO 6)**: Thiết kế CSDL quan hệ SQL & BaaS, Lập trình Python OOP, Xây dựng Server Backend FastAPI RESTful bảo mật JWT, Ứng dụng AI IDE (Cursor/Windsurf) Pair-Programming, Phân tích yêu cầu nghiệp vụ (Mom Test, JTBD, SRS) và hoàn thành Web Fullstack theo chuẩn Agile.
-* **Chi tiết Môn học**:
-  * *IT-201 (BA & System Design)*: Khảo sát nhu cầu thực tế (The Mom Test, JTBD), lập tài liệu đặc tả SRS, quản lý dự án trên Jira/Kanban.
-  * *IT-202 (Database)*: Thiết kế ERD, chuẩn hóa CSDL, truy vấn PostgreSQL nâng cao, tích hợp BaaS (Supabase/Firebase). Kế thừa SRS từ IT-201.
-  * *IT-203 (Python Programming)*: Cú pháp Python, cấu trúc dữ liệu, xử lý ngoại lệ, tư duy Lập trình hướng đối tượng (OOP).
-  * *IT-204 (Back-end FastAPI)*: FastAPI Routing, Pydantic Models, SQLAlchemy ORM, xác thực JWT, bảo mật CORS.
-  * *IT-205 (AI-assisted Programming)*: Làm chủ Cursor/Windsurf, quản lý Context (@Files, @Web, .cursorignore), quy trình Design-to-Code.
-  * *IT-206 (SDLC Agile/Scrum)*: Vận hành Scrum team, quản lý Sprint, giải quyết xung đột mã nguồn.
-  * *RK-101 (Thực tập RK-Lab 1)*: Xây dựng và bảo vệ sản phẩm Web Fullstack hoàn chỉnh trước hội đồng.
+### Bảng Tóm tắt Học phần Các Học kỳ Tiếp theo (SEM II đến SEM V):
 
----
-
-### C. Chi tiết Học kỳ III (SEM III) - Kiến thức Chuyên ngành: AI & RAG:
-* **Chuẩn đầu ra (PLO 1 – PLO 5)**: Toán ứng dụng cho AI, khai thác mô hình Học máy mã nguồn mở (Hugging Face), quản trị CSDL Vector (pgvector), kết nối LangChain xây dựng hệ thống RAG khắc phục ảo giác, phát triển dự án Trợ lý AI nội bộ doanh nghiệp.
-* **Chi tiết Môn học**:
-  * *IT-301 (Toán ứng dụng cho AI)*: Đại số tuyến tính, ma trận, Cosine Similarity, thư viện Numpy, Pandas, Prompt-to-Visualization.
-  * *IT-302 (Cấu trúc dữ liệu & Giải thuật 1)*: Arrays, Linked Lists, Hash Tables, Sorting, Binary Search, dùng Cursor sinh Test Cases thuật toán.
-  * *IT-303 (Applied Machine Learning)*: Scikit-Learn, Hugging Face Transformers, Local Inference, Text Classification, Vector Embeddings.
-  * *IT-304 (RAG Systems & LLMs)*: Vector Embeddings, Chunking, cài đặt pgvector trên PostgreSQL, LangChain Core, Prompt Templates, RAG Engine.
-  * *RK-102 (Thực tập RK-Lab 2)*: Triển khai dự án RAG Q&A tra cứu tài liệu nội bộ doanh nghiệp.
-
----
-
-### D. Chi tiết Học kỳ IV (SEM IV) - Kiến thức Chuyên ngành: Agentic AI & DevOps:
-* **Chuẩn đầu ra (PLO 1 – PLO 5)**: Cấu trúc Cây và Đồ thị (tiền đề State Graph), phát triển Tác nhân tự hành (Autonomous Agents) kết nối Tool qua Giao thức Ngữ cảnh Mô hình (Model Context Protocol - MCP), điều phối hệ thống Đa tác nhân Multi-Agent (LangGraph) và đóng gói Container Docker chuẩn DevOps.
-* **Chi tiết Môn học**:
-  * *IT-401 (Cấu trúc dữ liệu & Giải thuật 2)*: Binary Search Trees, DFS, BFS, Đồ thị có hướng không chu trình (DAG), mô phỏng State Machine.
-  * *IT-402 (Autonomous Agents & MCP)*: OpenAI Tools API, ReAct Prompting, xây dựng MCP Servers, cơ chế Tool Execution an toàn.
-  * *IT-403 (Multi-Agent Architecture)*: LangGraph State Graphs, Supervisor pattern, Conditional Edges, Human-in-the-loop tự động hóa quy trình.
-  * *IT-404 (DevOps & Containerization)*: Nguyên lý ảo hóa Container, Dockerfile, Docker Compose điều phối Microservices, biến môi trường.
-  * *RK-103 (Thực tập RK-Lab 3)*: Tự động hóa nghiệp vụ doanh nghiệp bằng Multi-Agent và bàn giao dưới dạng Docker Container.
-
----
-
-### E. Chi tiết Học kỳ V (SEM V) - Kiến thức Chuyên ngành: LLMOps & Production Cloud:
-* **Chuẩn đầu ra (PLO 1 – PLO 4)**: Bộ nhớ đệm ngữ nghĩa (Semantic Cache Redis), định tuyến mô hình (Model Routing), quản trị chi phí API (Cost Governance), phòng chống tấn công Prompt Injection (NeMo Guardrails), lọc dữ liệu cá nhân PII Scrubbing, triển khai hệ thống an toàn lên AWS Cloud.
-* **Chi tiết Môn học**:
-  * *IT-501 (LLMs Operation & Cost Governance)*: Semantic Caching với Redis, Fallback LLM Logic, Observability & Tracing với PostHog, tối ưu chi phí.
-  * *IT-502 (AI Security & Cloud Deployment)*: NeMo Guardrails, lọc PII Regex, OWASP for LLM, cấu hình máy chủ AWS EC2, Domain & SSL bảo mật.
-  * *RK-104 (Thực tập Tốt nghiệp RK-Lab)*: Hoàn thiện sản phẩm phần mềm Production-Ready, bảo vệ hiệu quả ROI và thiết kế kiến trúc trước hội đồng.
+| Học kỳ | Mã môn | Tên Môn học Trọng tâm | Điểm Đột phá Công nghệ & Năng lực Đạt được | Sản phẩm Đầu ra Dự án |
+| :---: | :---: | :--- | :--- | :--- |
+| **SEM II** | **IT-201** | BA & Information System Design | Phân tích yêu cầu (The Mom Test, JTBD), lập tài liệu đặc tả SRS, quản trị Jira Agile | Tài liệu SRS & Bảng Kanban dự án chạy thực |
+| | **IT-202** | Database (PostgreSQL & BaaS) | Thiết kế lược đồ quan hệ chuẩn hóa, truy vấn SQL, kết nối Supabase/Firebase BaaS | Lược đồ CSDL PostgreSQL hoàn chỉnh |
+| | **IT-203** | Python Programming (OOP) | Cú pháp Python, cấu trúc dữ liệu nâng cao, Lập trình hướng đối tượng (OOP) tái sử dụng | Module Core Business Logic bằng Python |
+| | **IT-204** | Back-end Development (FastAPI) | Xây dựng RESTful API chuẩn mực, Pydantic Models, SQLAlchemy ORM, xác thực an toàn JWT | Hệ thống Backend API Server hoàn chỉnh |
+| | **IT-205** | AI-assisted Programming | Làm chủ AI IDE (Cursor/Windsurf), quản lý ngữ cảnh (@Files, @Web), Design-to-Code | Quy trình sinh code UI & API chuẩn hệ thống |
+| | **IT-206** | Software Development Life Cycle | Vận hành Agile/Scrum, Sprint Planning, xử lý gộp mã nguồn nhóm trên GitHub | Quy trình phát triển phần mềm chuẩn Agile |
+| | **RK-101** | Thực tập RK-Lab Internship 1 | Tích hợp giao diện Frontend Kỳ I và Backend Kỳ II thành sản phẩm Web Fullstack hoàn chỉnh | Ứng dụng Web Fullstack Production-Ready |
+| **SEM III**| **IT-301** | Applied Mathematics for AI | Đại số tuyến tính, ma trận, Cosine Similarity, phân tích dữ liệu với Numpy, Pandas | Pipeline làm sạch & Dashboard phân tích dữ liệu |
+| | **IT-302** | DSA 1 (Cấu trúc dữ liệu & Giải thuật) | Phân tích độ phức tạp O(n), Arrays, Hash Tables, Sorting, Binary Search, test case Cursor | Thư viện thuật toán tối ưu tra cứu |
+| | **IT-303** | Applied Machine Learning | Triển khai mô hình mã nguồn mở từ Hugging Face (Transformers, Local Inference, Embeddings) | API Phân loại văn bản & Sinh Embeddings |
+| | **IT-304** | RAG Systems & LLMs Development | Quản trị CSDL Vector (pgvector), kết nối LangChain Core, Prompt Templates, RAG Engine | Hệ thống RAG Engine Q&A tài liệu nội bộ |
+| | **RK-102** | Thực tập RK-Lab Internship 2 | Khảo sát nhu cầu tra cứu doanh nghiệp và hoàn thiện Trợ lý AI hỏi đáp dữ liệu nội bộ | Sản phẩm AI Assistant tích hợp doanh nghiệp |
+| **SEM IV** | **IT-401** | DSA 2 (Cây & Đồ thị nâng cao) | Cây nhị phân tìm kiếm, DFS, BFS, Đồ thị có hướng không chu trình (DAG), State Machine | Mô phỏng State Machine giải thuật bằng Python |
+| | **IT-402** | Autonomous Agents & MCP Protocol | OpenAI Tools API, ReAct Prompting, xây dựng MCP Servers kết nối dữ liệu an toàn | Single Agent tự suy luận và gọi Tool ngoài |
+| | **IT-403** | Multi-Agent Architecture (LangGraph)| Biểu đồ trạng thái (State Graphs), Supervisor pattern, Human-in-the-loop điều phối đa tác nhân | Luồng Multi-Agent tự động hóa nghiệp vụ |
+| | **IT-404** | DevOps Arch & Containerization | Đóng gói Container, Docker Compose điều phối Microservices, đồng nhất môi trường | Hệ thống Dockerized chạy bằng 1 dòng lệnh |
+| | **RK-103** | Thực tập RK-Lab Internship 3 | Tự động hóa quy trình nghiệp vụ chuyên biệt bằng kiến trúc Multi-Agent đóng gói Docker | Giải pháp AI Automation doanh nghiệp |
+| **SEM V**  | **IT-501** | LLMs Operation & Cost Governance | Semantic Caching với Redis, Model Routing thông minh, Observability & Tracing (PostHog) | Module Caching & Tracking tối ưu chi phí API |
+| | **IT-502** | AI Security & Cloud Deployment | Chống Prompt Injection (NeMo Guardrails), lọc PII Regex, OWASP LLM, triển khai an toàn AWS | Hệ thống API an toàn chịu tải trên AWS Cloud |
+| | **RK-104** | Thực tập Tốt nghiệp RK-Lab 4 | Hoàn thiện sản phẩm phần mềm chuẩn Production, bảo vệ hiệu quả ROI và System Design | Đồ án Tốt nghiệp đạt chuẩn kỹ sư quốc tế |
 
 ---
 
 ## 2.5. Khai thác Hạ tầng LMS AI Khả thi Hỗ trợ Học tập & Lộ trình Thích ứng Dần 03 Giai đoạn
 
-### 1. Khai thác Hạ tầng LMS AI Khả thi:
-* **AI Autochecker & Autograder**: Tự động chấm bài lab lập trình dựa trên bộ test case định sẵn và kiểm tra chuẩn format code ngay khi sinh viên commit mã nguồn, giúp sinh viên nhận phản hồi sửa sai tức thì.
-* **AI Q&A Assistant 24/7**: Đóng vai trò gia sư ảo hỗ trợ giải thích cú pháp, bắt lỗi biên dịch phổ biến ngoài giờ lên lớp, giảm thiểu tình trạng sinh viên bị tắc nghẽn khi tự học ở nhà.
-* **Early Warning Dashboard**: Tự động tổng hợp dữ liệu học tập và cảnh báo sớm sinh viên có nguy cơ rớt môn trước 2–3 tuần.
+### Bảng Khai thác 03 Năng lực LMS AI Thiết thực:
 
-### 2. Lộ trình Thích ứng Dần qua 03 Giai đoạn (Không gây sốc):
-* **Giai đoạn 1 (Từ nay – 2025) - Thử nghiệm Khung K26 & Giữ vững Ổn định**:
-  * Áp dụng Khung K26 mới cho các lớp tân sinh viên nhập học năm 2025.
-  * Tích hợp thử nghiệm hệ thống LMS AI hỗ trợ bài tập lab.
-  * Đo lường mức độ tiếp thu và độ hài lòng của sinh viên.
-* **Giai đoạn 2 (Năm 2026) - Chuẩn hóa Vận hành Toàn khóa**:
-  * Vận hành trơn tru toàn bộ 5 học kỳ của Khung K26.
-  * Số hóa 100% học liệu số trên LMS AI.
-  * Hoàn thiện và công bố Đề án Tuyển sinh năm 2027 trước ngày **31/12/2026** theo đúng Quyết định 3040/QĐ-BGDĐT.
-* **Giai đoạn 3 (Từ năm 2027 trở đi) - Chuẩn hóa & Bứt phá Tuyển sinh Mới**:
-  * Vận hành mô hình chuẩn AI-Native đáp ứng hoàn toàn quy chế mới của Bộ GD&ĐT.
-  * Đảm bảo chuẩn đầu ra kỹ sư AI-Native đáp ứng tiêu chuẩn tuyển dụng khắt khe của Rikkeisoft Global và thị trường quốc tế.
+| STT | Tính năng LMS AI | Cơ chế Hoạt động Thực tế | Hiệu quả Đột phá Mang lại |
+| :---: | :--- | :--- | :--- |
+| **01** | **AI Autochecker & Autograder** | Kiểm thử tự động mã nguồn theo bộ test case định sẵn và kiểm tra chuẩn format code ngay khi sinh viên nộp bài. | Sinh viên được sửa lỗi ngay lập tức; không bị phụ thuộc vào thời gian chấm bài thủ công. |
+| **02** | **AI Q&A Assistant 24/7** | Trợ lý ảo tích hợp LLM chuyên sâu giải thích lỗi cú pháp (Syntax, NullPointer, Config) và gợi ý hướng tư duy. | Tự động giải quyết **>60% thắc mắc ngoài giờ**, sinh viên tự tin tự học tại nhà. |
+| **03** | **Early Warning Dashboard** | Thu thập dữ liệu hành vi (tiến độ bài tập, điểm lab, thời gian học) để phát hiện sinh viên sa sút trước **2–3 tuần**. | Cung cấp danh sách cảnh báo chính xác để nhà trường can thiệp, giữ vững sĩ số. |
+
+---
+
+### Sơ đồ Lộ trình Triển khai Thích ứng Dần 03 Giai đoạn:
+
+```mermaid
+flowchart LR
+    Phase1["GIAI ĐOẠN 1 (2025)\nTHỬ NGHIỆM K26 & ỔN ĐỊNH\n• Áp dụng Khung K26 cho tân SV\n• LMS AI chạy hỗ trợ bài lab\n• Đo lường độ tiếp thu & ổn định"] --> Phase2["GIAI ĐOẠN 2 (2026)\nCHUẨN HÓA VẬN HÀNH 5 KỲ\n• Vận hành trơn tru cả 5 học kỳ\n• Số hóa 100% học liệu số trên LMS\n• Công bố Đề án Tuyển sinh 2027\n  trước hạn chốt 31/12/2026"]
+    Phase2 --> Phase3["GIAI ĐOẠN 3 (TỪ 2027)\nBỨT PHÁ TUYỂN SINH MỚI\n• Vận hành tối ưu theo QĐ 3040\n• 100% đầu ra đạt chuẩn AI-Native\n• Nhân rộng hợp tác quy mô lớn"]
+
+    style Phase1 fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a,stroke-width:1.5px
+    style Phase2 fill:#fff7ed,stroke:#ea580c,color:#c2410c,stroke-width:1.5px
+    style Phase3 fill:#f0fdf4,stroke:#16a34a,color:#15803d,stroke-width:1.5px
+```
 
 ---
 
 # PHẦN 3: CÁC NỘI DUNG TRỌNG TÂM THẢO LUẬN VỚI HỘI ĐỒNG PTIT
 
-Nhằm chuẩn bị tốt nhất cho buổi làm việc chiến lược giữa Lãnh đạo Rikkei Education và Ban Giám đốc/Hội đồng Đào tạo Học viện PTIT, Bộ môn CNTT đề xuất 03 nhóm nội dung trọng tâm cần đưa ra thảo luận:
+### Bảng Ma trận 03 Nội dung Trọng tâm Thảo luận Chiến lược:
 
-```
-+-------------------------------------------------------------------------------------------------------------------+
-|                         03 NỘI DUNG TRỌNG TÂM THẢO LUẬN VỚI HỘI ĐỒNG PTIT                                         |
-+-------------------------------------------------------------------------------------------------------------------+
-| 1. ĐỒNG BỘ THỜI KHÓA BIỂU & CÔNG NHẬN TÍN CHỈ TƯƠNG ĐƯƠNG                                                         |
-|    • Đề xuất Học viện PTIT xem xét công nhận tương đương tín chỉ cho các học phần thực hành dự án và các kỳ thực tập |
-|      doanh nghiệp RK-Lab Internship (RK-101 đến RK-104) do RE đào tạo để giảm tải cho sinh viên.                 |
-|    • Thống nhất khung giờ học tại lớp của RE để không trùng lịch thi và lịch học chính khóa tại PTIT.             |
-+-------------------------------------------------------------------------------------------------------------------+
-| 2. TÍCH HỢP HỆ THỐNG LMS AI VÀO QUY TRÌNH QUẢN LÝ ĐÀO TẠO                                                         |
-|    • Thống nhất cơ chế liên thông dữ liệu học tập (API sync) giữa LMS AI của RE và hệ thống quản trị đào tạo PTIT.   |
-|    • Công nhận kết quả đánh giá tự động từ Autograder và điểm chuyên cần trên LMS AI làm căn cứ xét điểm quá trình.|
-+-------------------------------------------------------------------------------------------------------------------+
-| 3. PHỐI HỢP NÂNG CAO TỶ LỆ HOÀN THÀNH KHÓA HỌC & ĐẦU RA VIỆC LÀM                                                  |
-|    • Thiết lập cơ chế trao đổi định kỳ về tình hình chuyên cần và cảnh báo sớm các sinh viên có nguy cơ nợ môn.   |
-|    • Phối hợp tổ chức ngày hội tuyển dụng (Job Fair) kết nối sinh viên tốt nghiệp hệ hợp tác với Rikkeisoft Global|
-|      và các doanh nghiệp đối tác công nghệ lớn.                                                                   |
-+-------------------------------------------------------------------------------------------------------------------+
-```
+| STT | Trọng tâm Thảo luận | Nội dung Cụ thể Đề xuất Hội đồng PTIT | Mục tiêu & Kết quả Cần đạt |
+| :---: | :--- | :--- | :--- |
+| **01** | **Đồng bộ Thời khóa biểu & Công nhận Tín chỉ** | • Thống nhất lịch học tại lớp của RE để không trùng lịch thi và lịch học chính khóa tại PTIT.<br>• Đề xuất PTIT xem xét **công nhận tương đương tín chỉ** cho các học phần thực hành dự án và các kỳ thực tập doanh nghiệp RK-Lab Internship (RK-101 đến RK-104) do RE đào tạo. | Đảm bảo tổng tải học tập của sinh viên **&le; 30–32 giờ/tuần**, hạn chế tối đa nguy cơ kiệt sức và nợ môn. |
+| **02** | **Tích hợp LMS AI vào Cổng Quản lý Đào tạo** | • Thống nhất cơ chế liên thông dữ liệu học tập (API sync) giữa hệ thống LMS AI của RE và cổng quản trị đào tạo PTIT.<br>• Công nhận kết quả đánh giá tự động từ Autograder và điểm chuyên cần trên LMS AI làm căn cứ xét điểm quá trình chính thức. | Minh bạch hóa dữ liệu đánh giá năng lực, hiện đại hóa quy trình quản trị đào tạo đại học số. |
+| **03** | **Phối hợp Nâng cao Tỷ lệ Tốt nghiệp & Việc làm** | • Thiết lập kênh kết nối thường trực từ Early Warning Dashboard để cùng phối hợp làm việc với gia đình can thiệp sinh viên có nguy cơ thôi học.<br>• Phối hợp tổ chức ngày hội tuyển dụng kết nối sinh viên tốt nghiệp hệ hợp tác trực tiếp với Rikkeisoft Global và các đối tác công nghệ lớn. | Đảm bảo tỷ lệ sinh viên hoàn thành khóa học **>95%** và **100% việc làm đúng chuyên ngành** với thu nhập cao. |
 
 ---
 
